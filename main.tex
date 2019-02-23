@@ -1,0 +1,289 @@
+\documentclass[10pt,titlepage]{asmath}
+
+% preamble {{{
+%% imports {{{
+\usepackage[margin=1in]{geometry}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amscd}
+
+\usepackage{enumitem}
+\usepackage{csquotes}
+\usepackage{graphics}
+\usepackage{caption}
+\usepackage{tikz}
+\usepackage{pgfplots}
+% \usepackage{minted}
+\usepackage{nameref}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+\usepackage{physics}
+
+\usepackage{multicol}
+\usepackage{subfiles}
+\usepackage[page]{appendix}
+
+\usepackage[obeyDraft]{todonotes}
+\usepackage{blindtext}
+%% }}}
+%% colors {{{
+\definecolor{red}{RGB}{244,67,54}
+\definecolor{pink}{RGB}{233,30,99}
+\definecolor{purple}{RGB}{156,39,176}
+\definecolor{deep-purple}{RGB}{103,58,183}
+\definecolor{indigo}{RGB}{117,125,232}
+\definecolor{blue}{RGB}{110,198,255}
+\definecolor{pale-blue}{RGB}{103,218,255}
+\definecolor{cyan}{RGB}{98,239,255}
+\definecolor{teal}{RGB}{82,199,184}
+\definecolor{green}{RGB}{128,226,126}
+\definecolor{pale-green}{RGB}{190,246,122}
+\definecolor{lime}{RGB}{255,255,110}
+\definecolor{yellow}{RGB}{255,255,114}
+\definecolor{amber}{RGB}{255,243,80}
+\definecolor{orange}{RGB}{255,201,71}
+\definecolor{deep-orange}{RGB}{255,138,80}
+\definecolor{brown}{RGB}{169,130,116}
+%% }}}
+%% renoewcommands {{{
+\renewcommand{\thealgorithm}{\arabic{section}.\arabic{algorithm}}
+\renewcommand\thefigure{\thesection.\arabic{figure}}
+%% }}}
+%% commands {{{
+\newcommand{\rtodo}[1]{\todo[inline, color=red]{#1}}
+\newcommand{\ytodo}[1]{\todo[inline, color=orange]{#1}}
+\newcommand{\btodo}[1]{\todo[inline, color=blue]{#1}}
+\newcommand{\gtodo}[1]{\todo[inline, color=green]{#1}}
+
+\newcommand{\hdiv}[3]{
+  \vspace{#1}%
+  \noindent\rule{\textwidth}{#2}%
+  \vspace{#3}%
+}
+
+\newcommand{\prt}[1]{
+  \part{#1}%
+  \vspace{10pt}%
+  \noindent\rule{\textwidth}{2pt}%
+  \vspace{10pt}%
+}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\RN}[1]{%
+  \textup{\uppercase\expandafter{\romannumeral#1}}%
+}
+%% }}}
+%% environments {{{
+\newenvironment{Figure}
+{\par\medskip\noindent\minipage{\linewidth}}
+{\endminipage\par\medskip}
+%% }}}
+%% commands {{{
+\theoremstyle{definition}
+%% }}}
+% }}}
+
+\title{STEM Notes}
+\author{Arden Rasmussen and Sean Richardson}
+\date{\today}
+
+
+\begin{document}
+\pagenumbering{gobble}
+\maketitle
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+
+\vspace*{\fill}
+\hdiv{10pt}{3pt}{15pt}
+\chapter{Mathematics}%
+\label{cha:mathematics}
+\hdiv{15pt}{3pt}{10pt}
+\vspace*{\fill}
+\newpage
+
+
+\part{Calc III}%
+\label{prt:calc_iii}
+\hdiv{10pt}{2pt}{10pt}
+\begin{multicols}{2}
+  \subfile{mathematics/calc_iii}
+\end{multicols}
+
+\newpage
+\part{Linear Algebra}%
+\label{prt:linear_algebra}
+\hdiv{10pt}{2pt}{10pt}
+\begin{multicols}{2}
+  \subfile{mathematics/linear_algebra}
+\end{multicols}
+
+\newpage
+\part{Differential Equations}%
+\label{prt:differential_equations}
+\hdiv{10pt}{2pt}{10pt}
+\begin{multicols}{2}
+  \subfile{mathematics/differential_equations.tex}
+\end{multicols}
+
+\newpage
+\part{Partial Differential Equations}%
+\label{prt:partial_differential_equations}
+\hdiv{10pt}{2pt}{10pt}
+\begin{multicols}{2}
+  \subfile{mathematics/partial_differential_equations.tex}
+\end{multicols}
+
+\newpage
+\part{Discrete}%
+\label{prt:discrete}
+\hdiv{10pt}{2pt}{10pt}
+\begin{multicols}{2}
+  \subfile{mathematics/discrete.tex}
+\end{multicols}
+
+\newpage
+\part{Complex Variables}%
+\label{prt:complex_variables}
+\hdiv{10pt}{2pt}{10pt}
+\begin{multicols}{2}
+  \subfile{mathematics/complex_variables.tex}
+\end{multicols}
+
+\newpage
+\part{Real Analysis I}%
+\label{prt:real_analysis_i}
+\hdiv{10pt}{2pt}{10pt}
+\begin{multicols}{2}
+  \subfile{mathematics/real_i.tex}
+\end{multicols}
+
+\newpage
+\part{Real Analysis II}%
+\label{prt:real_analysis_ii}
+\hdiv{10pt}{2pt}{10pt}
+\begin{multicols}{2}
+  \subfile{mathematics/real_ii.tex}
+\end{multicols}
+
+\newpage
+\vspace*{\fill}
+\hdiv{10pt}{3pt}{15pt}
+\chapter{Physics}%
+\label{cha:Physics}
+\hdiv{15pt}{3pt}{10pt}
+\vspace*{\fill}
+\newpage
+
+\newpage
+\part{Motion}
+\label{prt:motion}
+\hdiv{10pt}{2pt}{10pt}
+\begin{multicols}{2}
+  \subfile{physics/motion.tex}
+\end{multicols}
+
+\newpage
+\part{Waves and Matter}
+\label{prt:waves_and_matter}
+\hdiv{10pt}{2pt}{10pt}
+\begin{multicols}{2}
+  \subfile{physics/waves_and_matter.tex}
+\end{multicols}
+
+\newpage
+\part{Electromagnetism}
+\label{prt:electromagnetism}
+\hdiv{10pt}{2pt}{10pt}
+\begin{multicols}{2}
+  \subfile{physics/electromagnetism.tex}
+\end{multicols}
+
+\newpage
+\part{Thermo/Stats Mechanics}
+\label{prt:thermo_stats_mechanics}
+\hdiv{10pt}{2pt}{10pt}
+\begin{multicols}{2}
+  \subfile{physics/thermo_stats_mechanics.tex}
+\end{multicols}
+
+\newpage
+\part{Computational Physics}
+\label{prt:computational_physics}
+\hdiv{10pt}{2pt}{10pt}
+\begin{multicols}{2}
+  \subfile{physics/computational_physics.tex}
+\end{multicols}
+
+\newpage
+\part{Quantum Mechanics}
+\label{prt:quantum_mechanics}
+\hdiv{10pt}{2pt}{10pt}
+\begin{multicols}{2}
+  \subfile{physics/quantum_mechanics.tex}
+\end{multicols}
+
+\newpage
+\part{Adv Electricity/Magnetism}
+\label{prt:adv_electricity_magnetism}
+\hdiv{10pt}{2pt}{10pt}
+\begin{multicols}{2}
+  \subfile{physics/adv_electricity_magetism.tex}
+\end{multicols}
+
+\newpage
+\vspace*{\fill}
+\hdiv{10pt}{3pt}{15pt}
+\chapter{Computer Science}%
+\label{cha:computer_science}
+\hdiv{15pt}{3pt}{10pt}
+\vspace*{\fill}
+\newpage
+
+\newpage
+\part{Theory of Computation}
+\label{prt:theory_of_computation}
+\hdiv{10pt}{2pt}{10pt}
+\begin{multicols}{2}
+  \subfile{computer_science/theory_of_computation.tex}
+\end{multicols}
+
+\newpage
+\part{Computer Graphics}
+\label{prt:computer_graphics}
+\hdiv{10pt}{2pt}{10pt}
+\begin{multicols}{2}
+  \subfile{computer_science/computer_graphics.tex}
+\end{multicols}
+
+\newpage
+\part{Adv Computer Graphics}
+\label{prt:adv_computer_graphics}
+\hdiv{10pt}{2pt}{10pt}
+\begin{multicols}{2}
+  \subfile{computer_science/adv_computer_graphics.tex}
+\end{multicols}
+
+\newpage
+\part{Computer Architecture}
+\label{prt:computer_architecture}
+\hdiv{10pt}{2pt}{10pt}
+\begin{multicols}{2}
+  \subfile{computer_science/computer_architecture.tex}
+\end{multicols}
+
+\newpage
+\part{AI and Machine Learning}
+\label{prt:ai_and_machine_learning}
+\hdiv{10pt}{2pt}{10pt}
+\begin{multicols}{2}
+  \subfile{computer_science/ai_and_machine_learning.tex}
+\end{multicols}
+
+\end{document}
